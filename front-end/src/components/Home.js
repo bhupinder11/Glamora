@@ -28,10 +28,10 @@ const Home = () => {
         <Header />
       </div>
 
-      <div>
+      <div className="">
         <div className="w-full h-screen flex items-start px-20 py-7 ">
           <div className="w-[25%] flex h-screen flex-col items-start">
-            <div className="flex items-center gap-2 font-semibold">
+            <div className="flex fixed items-center gap-2 font-semibold">
               <h3>sort by</h3>
               <form action="/shop">
                 <select
@@ -44,7 +44,7 @@ const Home = () => {
                 </select>
               </form>
             </div>
-            <div className="flex flex-col mt-20">
+            <div className="flex flex-col mt-20 fixed">
               <h3 className="block w-fit mb-2 text-gray-500 font-semibold hover:text-black hover:cursor-pointer">
                 New Collection
               </h3>
@@ -56,7 +56,7 @@ const Home = () => {
               </h3>
             </div>
             <div className="mt-32">
-              <h3 className="block w-fit mb-2 text-gray-500 font-semibold font-sm">
+              <h3 className="block mt-32 w-fit mb-2 text-gray-500 font-semibold font-sm">
                 Filter by :
               </h3>
               <h3 className="block w-fit mb-2 text-gray-500 font-semibold hover:text-black hover:cursor-pointer">
@@ -67,7 +67,7 @@ const Home = () => {
               </h3>
             </div>
           </div>
-          <div className="w-[75%] flex flex-row flex-wrap gap-10 h-screen">
+          <div className="w-[75%] flex flex-row flex-wrap gap-10 max-h-[500px] scrollbar-hide overflow-y-auto">
             {allproducts?.map((product) => {
                const base64String = product?.image?.data?.data 
                ? btoa(String.fromCharCode(...new Uint8Array(product.image.data.data)))
@@ -77,7 +77,7 @@ const Home = () => {
                   <div className="w-60 h-72  hover:shadow-xl hover:cursor-pointer hover:scale-105 transform transition duration-300">
                     <div className= "w-full h-52 flex items-center justify-center rounded-t-lg" style={{ backgroundColor: product.bgcolor || 'blue' }}>
                       <img
-                        className="h-[12rem]"
+                        className="h-[12rem] drop-shadow-[0_10px_15px_rgba(0,0,0,0.4)]"
                         // src={`data:image/png;base64,${base64String}`}
                         src={`data:image/png;base64,${base64String}`}
                         alt="Product Image"

@@ -29,16 +29,6 @@ router.post("/createproduct", upload.single("image"),async function (req, res) {
                textcolor: req.body.inputData.textcolor
             })
             savedData.save();
-     //   let product = await productModel.create({
-   //      image: req.file.buffer,
-   //      name,
-   //      price,
-   //      discount,
-   //      bgcolor,
-   //      panelcolor,
-   //      textcolor
-   //   })
-   //   res.json({productcreated: true, product})
    res.send("image is saved")
   } catch (error) {
    //   res.json({errorcreatingproduct: true})
