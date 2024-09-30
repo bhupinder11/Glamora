@@ -8,6 +8,7 @@ const Home = () => {
   const [page, setPage] = useState(1);
   const [activePage, setActivePage] = useState(null);
 
+
   const handlepageclick = (index) => {
     setPage(index + 1);
     setActivePage(index + 1);

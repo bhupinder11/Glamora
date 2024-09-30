@@ -16,4 +16,6 @@ const productSchema = mongoose.Schema({
     textcolor: String
 })
 
+productSchema.index({ name: 1 });
+
 module.exports = mongoose.model("product", productSchema)
